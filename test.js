@@ -242,7 +242,7 @@ queue.push (function () {
       ['warn', '.entries', data && data.entries instanceof Array, true],
       ['info', 'Pressure_surface',
         try {
-          return data.entries[0].data.Pressure_surface;
+          return data.entries [0].data.Pressure_surface;
         } catch (e) {
           return e;
         }

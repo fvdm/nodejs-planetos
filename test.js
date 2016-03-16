@@ -227,14 +227,6 @@ queue.push (function () {
 });
 
 // method
-function testInfo (data) {
-  try {
-    return data.entries [0].data.Pressure_surface;
-  } catch (e) {
-    return e;
-  }
-}
-
 queue.push (function () {
   var params = {
     lon: -50.5,
@@ -247,9 +239,16 @@ queue.push (function () {
     doTest (err, 'NOAA example', [
       ['fail', 'type', data instanceof Object, true],
       ['warn', '.stats', data && data.stats instanceof Object, true],
-      ['warn', '.entries', data && data.entries instanceof Array, true],
-      ['info', 'Pressure_surface', testInfo (data)]
+      ['warn', '.entries', data && data.entries instanceof Array, true]
     ]);
+
+    if (data) {
+      log ('note', 'JSON data:');
+      console.dir (data, {
+        depth: null,
+        colors: true
+      });
+    }
   });
 });
 

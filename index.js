@@ -39,7 +39,7 @@ function getEndpoints (dataset, params, callback) {
 module.exports = function (conf) {
   config.apikey = conf.apikey || null;
   config.timeout = conf.timeout || 5000;
-  config.endpoint = conf.endpoint || null;
+  config.endpoint = conf.endpoint || 'http://api.planetos.com/v1';
 
   return {
     endpoints: getEndpoints

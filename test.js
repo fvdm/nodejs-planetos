@@ -239,7 +239,14 @@ queue.push (function () {
     doTest (err, 'NOAA example', [
       ['fail', 'type', data instanceof Object, true],
       ['warn', '.stats', data && data.stats instanceof Object, true],
-      ['warn', '.entries', data && data.entries instanceof Array, true]
+      ['warn', '.entries', data && data.entries instanceof Array, true],
+      ['info', 'Pressure_surface',
+        try {
+          return data.entries[0].data.Pressure_surface;
+        } catch (e) {
+          return e;
+        }
+      ]
     ]);
   });
 });

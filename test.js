@@ -225,7 +225,8 @@ function doTest (err, label, tests) {
 queue.push (function () {
   doTest (null, 'module', [
     ['fail', 'exports', typeof app, 'function'],
-    ['interface', planetos instanceof Object, true]
+    ['fail', 'interface', planetos instanceof Object, true],
+    ['fail', '.ebdpoints', planetos && typeof planetos.endpoints, 'function']
   ]);
 });
 

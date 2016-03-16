@@ -45,6 +45,15 @@ function getDataset (dataset, params, callback) {
       return;
     }
 
+    if (res.statusCode >= 300) {
+      error = new Error ('API error');
+      error.statusCode = res.statusCode;
+      error.body = data;
+
+      callback (error);
+      return;
+    }
+
     try {
       data = JSON.parse (data);
     } catch (e) {

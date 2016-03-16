@@ -243,7 +243,7 @@ queue.push (function () {
     ]);
 
     if (data) {
-      log ('note', 'JSON data:');
+      log ('note', '\nJSON data:');
       console.dir (data, {
         depth: null,
         colors: true

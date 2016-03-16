@@ -227,7 +227,7 @@ queue.push (function () {
 });
 
 // method
-function test_info (data) {
+function testInfo (data) {
   try {
     return data.entries [0].data.Pressure_surface;
   } catch (e) {
@@ -248,7 +248,7 @@ queue.push (function () {
       ['fail', 'type', data instanceof Object, true],
       ['warn', '.stats', data && data.stats instanceof Object, true],
       ['warn', '.entries', data && data.entries instanceof Array, true],
-      ['info', 'Pressure_surface', test_info (data)]
+      ['info', 'Pressure_surface', testInfo (data)]
     ]);
   });
 });

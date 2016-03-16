@@ -52,14 +52,24 @@ function talk (params, callback) {
  * Get dataset endpoints
  *
  * @callback callback
- * @param dataset {number} - Dataset ID
+ * @param dataset {string} - Dataset name
  * @param [params] {object} - Additional parameters
  * @param callback {function} - `function (err, data) {}`
  * @returns {void}
  */
 
 function getEndpoints (dataset, params, callback) {
-  
+  var options = {
+    path: '/datasets/' + dataset + '/point',
+    parameters: params
+  };
+
+  if (typeof params === 'function') {
+    callback = params;
+    options.parameters = null;
+  }
+
+  talk (options, callback);
 }
 
 

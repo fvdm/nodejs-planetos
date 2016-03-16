@@ -29,16 +29,23 @@ function talk (params, callback) {
 
   httpreq.doRequest (options, function (err, res) {
     var data = res && res.body || '';
+    var error = null;
 
     if (err) {
-      callback (err);
+      error = new Error ('request failed');
+      error.error = err;
+      callback (error);
       return;
     }
 
     try {
       data = JSON.parse (data);
     } catch (e) {
-      callback (e);
+      error = new Error ('response failed');
+      error.error = e;
+      error.statusCode = res.statusCode;
+      error.body = data;
+      callback (error);
       return;
     }
 

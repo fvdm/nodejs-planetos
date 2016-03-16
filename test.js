@@ -17,10 +17,6 @@ var warnings = 0;
 var queue = [];
 var next = -1;
 
-var cache = {
-  dataset: 'noaa_ww3_global_1.25x1d'
-};
-
 
 // Setup
 // set env PLANETOS_APIKEY  (CI tests)
@@ -226,15 +222,21 @@ function doTest (err, label, tests) {
 queue.push (function () {
   doTest (null, 'Module', [
     ['fail', 'exports', typeof app, 'function'],
-    ['fail', 'interface', planetos instanceof Object, true],
-    ['fail', '.endpoints', planetos && typeof planetos.endpoints, 'function']
+    ['fail', 'interface', typeof planetos, 'function']
   ]);
 });
 
-// methods
+// method
 queue.push (function () {
-  planetos.endpoints (cache.dataset, function (err, data) {
-    doTest (err, 'Method .endpoints', [
+  var params = {
+    lon: -50.5,
+    lat: 49.5,
+    count: 1,
+    context: 'reftime_time_lat_lon'
+  };
+
+  planetos ('noaa_ww3_global_1.25x1d', params, function (err, data) {
+    doTest (err, 'NOAA example', [
       ['fail', 'type', data instanceof Object, true],
       ['warn', '.stats', data && data.stats instanceof Object, true],
       ['warn', '.entries', data && data.entries instanceof Array, true]

@@ -229,6 +229,17 @@ queue.push (function () {
     ['fail', '.endpoints', planetos && typeof planetos.endpoints, 'function']
   ]);
 });
+
+// methods
+queue.push (function () {
+  planetos.endpoints (cache.dataset, function (err, data) {
+    doTest (err, '.endpoints', [
+      ['fail', 'type', data instanceof Object, true],
+      ['warn', '.stats', data && data.stats instanceof Object, true],
+      ['warn', '.entries', data && data.entries instanceof Array, true]
+    ]);
+  });
+});
   
 
 // Start the tests

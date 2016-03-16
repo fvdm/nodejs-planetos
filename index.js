@@ -10,6 +10,45 @@ var config = {};
 
 
 /**
+ * Communication
+ */
+
+function talk (params, callback) {
+  var options = {
+    url: config.endpoint + params.path,
+    method: params.method || 'GET',
+    parameters: params.parameters || {},
+    timeout: params.timeout || config.timeout,
+    headers: {
+      'Accept': 'application/json',
+      'User-Agent': 'planetos (https://github.com/fvdm/nodejs-planetos)'
+    }
+  };
+
+  options.parameters.apikey = config.apikey;
+
+  httpreq.doRequest (options, function (err, res) {
+    var data = res && res.body || '';
+    var error = null;
+
+    if (err) {
+      callback (err);
+      return;
+    }
+
+    try {
+      data = JSON.parse (data);
+    } catch (e) {
+      callback (e);
+      return;
+    }
+
+    callback (data);
+  });
+}
+
+
+/**
  * Get dataset endpoints
  *
  * @callback callback

@@ -20,7 +20,7 @@ function talk (params, callback) {
     parameters: params.parameters || {},
     timeout: params.timeout || config.timeout,
     headers: {
-      'Accept': 'application/json',
+      'Accept': 'text/plain',
       'User-Agent': 'planetos (https://github.com/fvdm/nodejs-planetos)'
     }
   };

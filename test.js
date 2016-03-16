@@ -223,7 +223,7 @@ function doTest (err, label, tests) {
 
 // module basics
 queue.push (function () {
-  doTest (null, 'module', [
+  doTest (null, 'Module', [
     ['fail', 'exports', typeof app, 'function'],
     ['fail', 'interface', planetos instanceof Object, true],
     ['fail', '.endpoints', planetos && typeof planetos.endpoints, 'function']
@@ -233,7 +233,7 @@ queue.push (function () {
 // methods
 queue.push (function () {
   planetos.endpoints (cache.dataset, function (err, data) {
-    doTest (err, '.endpoints', [
+    doTest (err, 'Method .endpoints', [
       ['fail', 'type', data instanceof Object, true],
       ['warn', '.stats', data && data.stats instanceof Object, true],
       ['warn', '.entries', data && data.entries instanceof Array, true]

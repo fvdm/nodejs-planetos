@@ -26,7 +26,7 @@ function getDataset (dataset, params, callback) {
     parameters: params,
     timeout: config.timeout,
     headers: {
-      'Accept': 'text/plain',
+      'Accept': 'application/json, text/plain',
       'User-Agent': 'planetos (https://github.com/fvdm/nodejs-planetos)'
     }
   };

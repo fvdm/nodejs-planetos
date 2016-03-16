@@ -231,6 +231,7 @@ queue.push (function () {
   planetos ('noaa_ww3_global_1.25x1d', {}, function (err, data) {
     doTest (null, 'API error', [
       ['fail', 'type', err instanceof Error, true],
+      ['fail', 'data', !data, true],
       ['fail', '.message', err && err.message, 'API error'],
       ['warn', '.statusCode', err && err.statusCode !== 200],
       ['warn', '.body', err && typeof err.body, 'string']

@@ -10,15 +10,21 @@ var config = {};
 
 
 /**
- * Communication
+ * Get dataset
+ *
+ * @callback callback
+ * @param dataset {string} - Dataset name
+ * @param params {object} - Parameters
+ * @param callback {function} - `function (err, data) {}`
+ * @returns {void}
  */
 
-function talk (params, callback) {
+function getDataset (dataset, params, callback) {
   var options = {
-    url: config.endpoint + params.path,
-    method: params.method || 'GET',
-    parameters: params.parameters || {},
-    timeout: params.timeout || config.timeout,
+    url: config.endpoint + '/datasets/' + dataset + '/point',
+    method: 'GET',
+    parameters: params,
+    timeout: config.timeout,
     headers: {
       'Accept': 'text/plain',
       'User-Agent': 'planetos (https://github.com/fvdm/nodejs-planetos)'
@@ -34,6 +40,7 @@ function talk (params, callback) {
     if (err) {
       error = new Error ('request failed');
       error.error = err;
+
       callback (error);
       return;
     }
@@ -45,37 +52,15 @@ function talk (params, callback) {
       error.error = e;
       error.statusCode = res.statusCode;
       error.body = data;
+
       callback (error);
       return;
     }
 
     callback (null, data);
   });
-}
 
-
-/**
- * Get dataset endpoints
- *
- * @callback callback
- * @param dataset {string} - Dataset name
- * @param [params] {object} - Additional parameters
- * @param callback {function} - `function (err, data) {}`
- * @returns {void}
- */
-
-function getEndpoints (dataset, params, callback) {
-  var options = {
-    path: '/datasets/' + dataset + '/point',
-    parameters: params
-  };
-
-  if (typeof params === 'function') {
-    callback = params;
-    options.parameters = null;
-  }
-
-  talk (options, callback);
+  return getDataset;
 }
 
 
@@ -88,7 +73,7 @@ function getEndpoints (dataset, params, callback) {
  * @param [conf.timeout] {number=5000} - Request timeout in ms
  * @param [conf.endpoint] {string} - Route API calls to another server
  * @param callback {function} - `function (err, data) {}`
- * @returns {void}
+ * @returns {function} - getDataset
  */
 
 module.exports = function (conf) {
@@ -96,7 +81,5 @@ module.exports = function (conf) {
   config.timeout = conf.timeout || 5000;
   config.endpoint = conf.endpoint || 'http://api.planetos.com/v1';
 
-  return {
-    endpoints: getEndpoints
-  };
+  return getDataset;
 };

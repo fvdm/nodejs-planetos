@@ -183,7 +183,7 @@ function doTest (err, label, tests) {
     return;
   }
 
-  log ('note', colorStr ('blue', '(' + (next + 1) + '/' + queue.length + ') ') + label);
+  console.log (colorStr ('blue', '(' + (next + 1) + '/' + queue.length + ') ') + colorStr ('bold', label));
 
   for (i = 0; i < tests.length; i++) {
     test = {

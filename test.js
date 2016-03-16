@@ -16,8 +16,9 @@ var errors = 0;
 var warnings = 0;
 var queue = [];
 var next = -1;
+
 var cache = {
-  token: null
+  dataset: 'noaa_ww3_global_1.25x1d'
 };
 
 

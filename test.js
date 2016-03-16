@@ -226,10 +226,10 @@ queue.push (function () {
   doTest (null, 'module', [
     ['fail', 'exports', typeof app, 'function'],
     ['fail', 'interface', planetos instanceof Object, true],
-    ['fail', '.ebdpoints', planetos && typeof planetos.endpoints, 'function']
+    ['fail', '.endpoints', planetos && typeof planetos.endpoints, 'function']
   ]);
 });
-
+  
 
 // Start the tests
 log ('note', 'Running tests...\n');

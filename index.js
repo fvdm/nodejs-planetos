@@ -29,7 +29,6 @@ function talk (params, callback) {
 
   httpreq.doRequest (options, function (err, res) {
     var data = res && res.body || '';
-    var error = null;
 
     if (err) {
       callback (err);
@@ -43,7 +42,7 @@ function talk (params, callback) {
       return;
     }
 
-    callback (data);
+    callback (null, data);
   });
 }
 

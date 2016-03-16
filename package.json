@@ -1,0 +1,45 @@
+{
+  "author": {
+    "name": "Franklin van de Meent",
+    "email": "fr@nkl.in",
+    "url": "https://frankl.in"
+  },
+  "name": "planetos",
+  "description": "Planet OS datasets API (unofficial)",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fvdm/nodejs-planetos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fvdm/nodejs-planetos/issues"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "httpreq": "0.4.x"
+  },
+  "devDependencies": {
+    "eslint": "2.x"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "node test.js ; eslint ."
+  },
+  "keywords": [
+    "planetos",
+    "dataset",
+    "weather",
+    "ocean",
+    "global",
+    "forecast",
+    "api",
+    "noaa",
+    "wavewatch",
+    "gfs",
+    "hycom"
+  ],
+  "license": "Unlicense"
+}

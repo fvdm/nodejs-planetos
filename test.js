@@ -233,7 +233,7 @@ queue.push (function () {
       ['fail', 'type', err instanceof Error, true],
       ['fail', 'data', !data, true],
       ['fail', '.message', err && err.message, 'API error'],
-      ['warn', '.statusCode', err && err.statusCode !== 200],
+      ['warn', '.statusCode', err && err.statusCode !== 200, true],
       ['warn', '.body', err && typeof err.body, 'string']
     ]);
   });

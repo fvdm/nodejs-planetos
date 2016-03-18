@@ -19,7 +19,8 @@
     "httpreq": "0.4.x"
   },
   "devDependencies": {
-    "eslint": "2.x"
+    "eslint": "2.x",
+    "dotest": "1.x"
   },
   "optionalDependencies": {},
   "engines": {

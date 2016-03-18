@@ -6,7 +6,7 @@ Access the Planet OS API with your Node.js app.
 [![Build Status](https://travis-ci.org/fvdm/nodejs-planetos.svg?branch=master)](https://travis-ci.org/fvdm/nodejs-planetos)
 
 * [Node.js](https://nodejs.org)
-* [Package on npm](https://www.npmjs.com)
+* [Package on npm](https://www.npmjs.com/package/@franklin/planetos)
 * [Planet OS](https://planetos.com)
 * [API documentation](http://data.planetos.com/guide/)
 

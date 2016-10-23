@@ -133,8 +133,8 @@ planetos ('noaa_ww3_global_1.25x1d', params, myCallback);
 ```
 
 
-License
--------
+Unlicense
+---------
 
 This is free and unencumbered software released into the public domain.
 

@@ -65,7 +65,7 @@ doTest.add ('Error: API error', function (test) {
 });
 
 // timeout
-doTest.add ('Error: request failed', function (tesr) {
+doTest.add ('Error: request failed', function (test) {
   var tmp = app ({
     apikey: config.apikey,
     endpoint: config.endpoint,

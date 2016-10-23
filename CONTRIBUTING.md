@@ -71,7 +71,7 @@ function hello (message, amount, config, callback) {
   * `Feat(config)`: New config params added
   * `Refactor(interface)`: Breaking changes to the interface
   * `Refactor(main)`: Production changes to main code
-  * `Refector(errors)`: Production changes to error handling
+  * `Refactor(errors)`: Production changes to error handling
   * `Refactor(package)`: Production changes to the npm package
   * `Fix(main)`: Bug fixes to main code
   * `Fix(errors)`: Bug fixes to error handling

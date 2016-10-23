@@ -70,7 +70,7 @@ function getDataset (dataset, params, callback) {
       }
     }
 
-    callback (error, !err && data);
+    callback (error, !error && data);
   });
 
   return getDataset;

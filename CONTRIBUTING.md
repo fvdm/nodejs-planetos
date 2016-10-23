@@ -91,7 +91,7 @@ function hello (message, amount, config, callback) {
 
 The package version must follow this format: **major.minor.patch**
 
-**Warning:** Do not updated the `package.json` version on your own.
+**Warning:** Do not update the `package.json` version on your own.
 Only the package maintainer must do that.
 
 * **major** are breaking changes to the interface and package

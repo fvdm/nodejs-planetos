@@ -10,24 +10,23 @@ var config = {};
 
 
 /**
- * Callback an error
+ * Generate an error
  *
- * @callback callback
  * @param message {string} - Error.message
  * @param err {mixed|null} - Error.error
  * @param code {number|null} - Error.statusCode
  * @param body {string|null} - Error.body
- * @param callback {function} - `function (err) {}`
- * @returns {void}
+ * @returns Error
  */
 
-function doError (message, err, code, body, callback) {
+function makeError (message, err, code, body) {
   var error = new Error (message);
 
   error.statusCode = code;
   error.error = err;
   error.body = body;
-  callback (error);
+
+  return error;
 }
 
 
@@ -57,25 +56,21 @@ function getDataset (dataset, params, callback) {
 
   httpreq.doRequest (options, function (err, res) {
     var data = res && res.body || '';
+    var error = null;
 
     if (err) {
-      doError ('request failed', err, null, null, callback);
-      return;
+      error = makeError ('request failed', err, null, null);
+    } else if (res.statusCode >= 300) {
+      error = makeError ('API error', null, res.statusCode, data);
+    } else {
+      try {
+        data = JSON.parse (data);
+      } catch (e) {
+        error = makeError ('response failed', e, res.statusCode, data);
+      }
     }
 
-    if (res.statusCode >= 300) {
-      doError ('API error', null, res.statusCode, data, callback);
-      return;
-    }
-
-    try {
-      data = JSON.parse (data);
-    } catch (e) {
-      doError ('response failed', e, res.statusCode, data, callback);
-      return;
-    }
-
-    callback (null, data);
+    callback (error, !err && data);
   });
 
   return getDataset;

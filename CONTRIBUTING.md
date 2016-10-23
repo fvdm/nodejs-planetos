@@ -46,12 +46,14 @@ When you intent to submit a PR, please follow these instructions:
  * @callback callback
  * @param message {string} - Some awesome message
  * @param [amount] {number=2} - Optional argument with default
+ * @param [config] {object} - Configuration
+ * @param [config.prop=5] - Property
  * @param callback {function} - Callback function
  * @return void
  */
 
-function hello (message, amount, callback) {
-  callback ('Hello ' + amount + ' worlds, ' + message);
+function hello (message, amount, config, callback) {
+  // ...
 }
 ```
 

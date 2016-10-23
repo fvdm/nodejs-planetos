@@ -20,12 +20,12 @@ Example
 -------
 
 ```js
-var planetos = require ('@franklin/planetos') ({
+const planetos = require ('@franklin/planetos') ({
   apikey: 'abc123'
 });
 
 // NOAA Wave Watch 3 data
-var params = {
+const params = {
   lon: -50.5,
   lat: 49.5,
   count: 1,
@@ -59,7 +59,7 @@ endpoint | string | no       | Planet OS | Override default API endpoint (i.e. p
 
 
 ```js
-var planetos = require ('@franklin/planetos') ({
+const planetos = require ('@franklin/planetos') ({
   apikey: 'abc123',
   timeout: 10000,
   endpoint: 'https://my.proxy/http://data.planetos.com/v1'
@@ -94,7 +94,7 @@ function myCallback (err, data) {
 }
 
 // Query parameters
-var params = {
+const params = {
   lon: -50.5,
   lat: 49.5,
   count: 1,

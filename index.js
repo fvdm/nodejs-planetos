@@ -65,7 +65,6 @@ function getDataset (dataset, params, callback) {
 
     if (res.statusCode >= 300) {
       doError ('API error', null, res.statusCode, data, callback);
-      error = new Error ('API error');
       return;
     }
 

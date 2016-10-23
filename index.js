@@ -10,6 +10,28 @@ var config = {};
 
 
 /**
+ * Callback an error
+ *
+ * @callback callback
+ * @param message {string} - Error.message
+ * @param err {mixed|null} - Error.error
+ * @param code {number|null} - Error.statusCode
+ * @param body {string|null} - Error.body
+ * @param callback {function} - `function (err) {}`
+ * @returns {void}
+ */
+
+function doError (message, err, code, body, callback) {
+  var error = new Error (message);
+
+  error.statusCode = code;
+  error.error = err;
+  error.body = body;
+  callback (error);
+}
+
+
+/**
  * Get dataset
  *
  * @callback callback
@@ -38,31 +60,20 @@ function getDataset (dataset, params, callback) {
     var error = null;
 
     if (err) {
-      error = new Error ('request failed');
-      error.error = err;
-
-      callback (error);
+      doError ('request failed', err, null, null, callback);
       return;
     }
 
     if (res.statusCode >= 300) {
+      doError ('API error', null, res.statusCode, data, callback);
       error = new Error ('API error');
-      error.statusCode = res.statusCode;
-      error.body = data;
-
-      callback (error);
       return;
     }
 
     try {
       data = JSON.parse (data);
     } catch (e) {
-      error = new Error ('response failed');
-      error.error = e;
-      error.statusCode = res.statusCode;
-      error.body = data;
-
-      callback (error);
+      doError ('response failed', e, res.statusCode, data, callback);
       return;
     }
 

@@ -25,8 +25,8 @@ planetos = app (config);
 // module basics
 doTest.add ('Module', function () {
   doTest.test ()
-    .isFunction ('fail', 'app', app)
-    .isFunction ('fail', 'planetos', planetos)
+    .isFunction ('fail', 'exports', app)
+    .isFunction ('fail', 'interface', planetos)
     .done ();
 });
 
@@ -44,7 +44,7 @@ doTest.add ('API error', function () {
 });
 
 // method
-doTest.add ('NOAA example', function () {
+doTest.add ('Function', function () {
   var params = {
     lon: -50.5,
     lat: 49.5,
@@ -57,6 +57,7 @@ doTest.add ('NOAA example', function () {
       .isObject ('fail', 'data', data)
       .isObject ('fail', 'data.stats', data && data.stats)
       .isArray ('fail', 'data.entries', data && data.entries)
+      .isNull ('fail', 'err', err)
       .done ();
 
     if (data) {

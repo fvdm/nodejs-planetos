@@ -30,19 +30,6 @@ doTest.add ('Module', function (test) {
     .done ();
 });
 
-// error
-doTest.add ('API error', function (test) {
-  planetos ('api-error-test', {}, function (err, data) {
-    test ()
-      .isError ('fail', 'err', err)
-      .isUndefined ('fail', 'data', data)
-      .isExactly ('fail', 'err.message', err && err.message, 'API error')
-      .isExactly ('warn', 'err.statusCode', err && err.statusCode, 404)
-      .isNotEmpty ('warn', 'err.body', err && err.body)
-      .done ();
-  });
-});
-
 // method
 doTest.add ('Function', function (test) {
   var params = {
@@ -60,6 +47,19 @@ doTest.add ('Function', function (test) {
       .isNull ('fail', 'err', err)
       .info ('Response data:')
       .info (data)
+      .done ();
+  });
+});
+
+// api error
+doTest.add ('Error: API error', function (test) {
+  planetos ('api-error-test', {}, function (err, data) {
+    test ()
+      .isError ('fail', 'err', err)
+      .isUndefined ('fail', 'data', data)
+      .isExactly ('fail', 'err.message', err && err.message, 'API error')
+      .isExactly ('warn', 'err.statusCode', err && err.statusCode, 404)
+      .isNotEmpty ('warn', 'err.body', err && err.body)
       .done ();
   });
 });

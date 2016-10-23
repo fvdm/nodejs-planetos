@@ -27,6 +27,9 @@
   "scripts": {
     "test": "dotest"
   },
+  "files": [
+    "CONTRIBUTING.md"
+  ],
   "keywords": [
     "planetos",
     "dataset",

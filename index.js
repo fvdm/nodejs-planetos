@@ -57,7 +57,6 @@ function getDataset (dataset, params, callback) {
 
   httpreq.doRequest (options, function (err, res) {
     var data = res && res.body || '';
-    var error = null;
 
     if (err) {
       doError ('request failed', err, null, null, callback);

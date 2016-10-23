@@ -23,17 +23,17 @@ planetos = app (config);
 
 
 // module basics
-doTest.add ('Module', function () {
-  doTest.test ()
+doTest.add ('Module', function (test) {
+  test ()
     .isFunction ('fail', 'exports', app)
     .isFunction ('fail', 'interface', planetos)
     .done ();
 });
 
 // error
-doTest.add ('API error', function () {
+doTest.add ('API error', function (test) {
   planetos ('noaa_ww3_global_1.25x1d', {}, function (err, data) {
-    doTest.test ()
+    test ()
       .isError ('fail', 'err', err)
       .isUndefined ('fail', 'data', data)
       .isExactly ('fail', 'err.message', err && err.message, 'API error')
@@ -44,7 +44,7 @@ doTest.add ('API error', function () {
 });
 
 // method
-doTest.add ('Function', function () {
+doTest.add ('Function', function (test) {
   var params = {
     lon: -50.5,
     lat: 49.5,
@@ -53,21 +53,14 @@ doTest.add ('Function', function () {
   };
 
   planetos ('noaa_ww3_global_1.25x1d', params, function (err, data) {
-    doTest.test (err)
+    test (err)
       .isObject ('fail', 'data', data)
       .isObject ('fail', 'data.stats', data && data.stats)
       .isArray ('fail', 'data.entries', data && data.entries)
       .isNull ('fail', 'err', err)
+      .info ('Response data:')
+      .info (data)
       .done ();
-
-    if (data) {
-      console.log ();
-      doTest.log ('note', 'JSON data:');
-      console.dir (data, {
-        depth: null,
-        colors: true
-      });
-    }
   });
 });
 

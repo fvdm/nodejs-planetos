@@ -64,6 +64,25 @@ doTest.add ('Function', function (test) {
   });
 });
 
+// timeout
+doTest.add ('Error: request failed', function (tesr) {
+  var tmp = app ({
+    apikey: config.apikey,
+    endpoint: config.endpoint,
+    timeout: 1
+  });
+
+  tmp ('api-error-test', {}, function (err, data) {
+    test ()
+      .isError ('fail', 'err', err)
+      .isExactly ('fail', 'err.message', err && err.message, 'request failed')
+      .isError ('fail', 'err.error', err && err.error)
+      .isExactly ('fail', 'err.error.code', err && err.error && err.error.code, 'TIMEOUT')
+      .isUndefined ('fail', 'data', data)
+      .done ();
+  });
+});
+
 
 // Start the tests
 doTest.run ();

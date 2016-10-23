@@ -32,7 +32,7 @@ doTest.add ('Module', function (test) {
 
 // error
 doTest.add ('API error', function (test) {
-  planetos ('noaa_ww3_global_1.25x1d', {}, function (err, data) {
+  planetos ('api-error-test', {}, function (err, data) {
     test ()
       .isError ('fail', 'err', err)
       .isUndefined ('fail', 'data', data)

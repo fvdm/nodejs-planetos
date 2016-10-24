@@ -1,3 +1,17 @@
+#### 0.3.3 (2016-10-24)
+
+##### Chores
+
+* **main:** Description, author, license comments ([522db02f](https://github.com/fvdm/nodejs-planetos/commit/522db02f8494f033fdb0264da5943c23bea5a890))
+
+##### Documentation Changes
+
+* **readme:** Updated npm install command ([92ac6f9f](https://github.com/fvdm/nodejs-planetos/commit/92ac6f9fb28d08f76cb21de66b8d36274b2b3281))
+
+##### Tests
+
+* **main:** Description, author, license comments ([b11f2fd2](https://github.com/fvdm/nodejs-planetos/commit/b11f2fd2d5a11f4a0288310172f0cd51f505f522))
+
 #### 0.3.2 (2016-10-24)
 
 ##### Documentation Changes

@@ -1,3 +1,15 @@
+#### 0.3.2 (2016-10-24)
+
+##### Documentation Changes
+
+* **contributing:** Make version note stand out more ([336f615b](https://github.com/fvdm/nodejs-planetos/commit/336f615b96bee15e38f6d0fb32236c4d988b7a3a))
+* **badges:** Removed scope from version badge ([c58f045b](https://github.com/fvdm/nodejs-planetos/commit/c58f045bc50d996652065f8471887091f6b3e140))
+* **readme:** Removed scope from package names ([bb70cd38](https://github.com/fvdm/nodejs-planetos/commit/bb70cd3800390d4b236cf36350901f1cdf5893dc))
+
+##### Refactors
+
+* **package:** Moved name out of scope ([55a7cb52](https://github.com/fvdm/nodejs-planetos/commit/55a7cb524161b74087d15625c53e2ffcf9aeada1))
+
 #### 0.3.1 (2016-10-23)
 
 ##### Chores

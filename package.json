@@ -6,7 +6,7 @@
   },
   "name": "@franklin/planetos",
   "description": "DEPRECATED - See planetos package (without scope)",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/fvdm/nodejs-planetos.git"

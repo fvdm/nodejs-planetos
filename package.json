@@ -5,7 +5,7 @@
     "url": "https://frankl.in"
   },
   "name": "@franklin/planetos",
-  "description": "Planet OS datasets API (unofficial)",
+  "description": "DEPRECATED - See planetos package (without scope)",
   "version": "0.3.1",
   "repository": {
     "type": "git",

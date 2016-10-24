@@ -11,7 +11,7 @@ Access the Planet OS API with your Node.js app.
 
 
 * [Node.js](https://nodejs.org)
-* [Package on npm](https://www.npmjs.com/package/@franklin/planetos)
+* [Package on npm](https://www.npmjs.com/package/planetos)
 * [Planet OS](https://planetos.com)
 * [API documentation](http://data.planetos.com/guide/)
 
@@ -20,7 +20,7 @@ Example
 -------
 
 ```js
-const planetos = require ('@franklin/planetos') ({
+const planetos = require ('planetos') ({
   apikey: 'abc123'
 });
 
@@ -59,7 +59,7 @@ endpoint | string | no       | Planet OS | Override default API endpoint (i.e. p
 
 
 ```js
-const planetos = require ('@franklin/planetos') ({
+const planetos = require ('planetos') ({
   apikey: 'abc123',
   timeout: 10000,
   endpoint: 'https://my.proxy/http://data.planetos.com/v1'

@@ -3,6 +3,11 @@ planetos
 
 Access the Planet OS API with your Node.js app.
 
+**DEPRECATED: Change to `planetos` package
+on [npm](https://www.npmjs.com/package/planetos)
+and [Github](https://github.com/fvdm/nodejs-planetos/tree/master).**
+
+
 [![npm](https://img.shields.io/npm/v/@franklin/planetos.svg?maxAge=3600)](https://github.com/fvdm/nodejs-planetos/blob/master/CHANGELOG.md)
 [![Build Status](https://travis-ci.org/fvdm/nodejs-planetos.svg?branch=master)](https://travis-ci.org/fvdm/nodejs-planetos)
 [![Coverage Status](https://coveralls.io/repos/github/fvdm/nodejs-planetos/badge.svg?branch=master)](https://coveralls.io/github/fvdm/nodejs-planetos?branch=master)

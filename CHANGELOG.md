@@ -1,3 +1,13 @@
+#### 0.3.2 (2016-10-24)
+
+##### Documentation Changes
+
+* **readme:** Added deprecation message to intro ([0439a00a](https://github.com/fvdm/nodejs-planetos/commit/0439a00a30970bdd79a927d2f785e38d206a8dd9))
+
+##### Refactors
+
+* **package:** Added deprecation message to description ([5e2da4dd](https://github.com/fvdm/nodejs-planetos/commit/5e2da4dd15500a710504c76412232d754af666df))
+
 #### 0.3.1 (2016-10-23)
 
 ##### Chores

@@ -42,7 +42,7 @@ Installation
 This module requires an API key from Planet OS.
 You can find it in your [account settings](http://data.planetos.com/account/settings/).
 
-`npm install @franklin/planetos`
+`npm install planetos`
 
 
 Configuration

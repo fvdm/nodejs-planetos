@@ -89,10 +89,10 @@ function hello (message, amount, config, callback) {
 
 ### Semantic versioning:
 
-The package version must follow this format: **major.minor.patch**
+> **Warning:** Do not update the `package.json` version on your own.
+> Only the package maintainer must do that.
 
-**Warning:** Do not update the `package.json` version on your own.
-Only the package maintainer must do that.
+The package version must follow this format: **major.minor.patch**
 
 * **major** are breaking changes to the interface and package
 * **minor** are new features, new configs to the interface

@@ -4,7 +4,7 @@
     "email": "fr@nkl.in",
     "url": "https://frankl.in"
   },
-  "name": "@franklin/planetos",
+  "name": "planetos",
   "description": "Planet OS datasets API (unofficial)",
   "version": "0.3.1",
   "repository": {

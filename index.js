@@ -1,8 +1,10 @@
 /*
 Name:           planetos - index.js
+Description:    Access Planet OS datasets (unofficial)
+Author:         Franklin van de Meent (https://frankl.in)
 Source & docs:  https://github.com/fvdm/nodejs-planetos
 Feedback:       https://github.com/fvdm/nodejs-planetos/issues
-License:        Unlicense (public domain)
+License:        Unlicense (public domain, see LICENSE file)
 */
 
 var httpreq = require ('httpreq');

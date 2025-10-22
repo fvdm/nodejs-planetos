@@ -6,8 +6,6 @@ Access the Planet OS API with your Node.js app.
 [![npm](https://img.shields.io/npm/v/planetos.svg?maxAge=3600)](https://github.com/fvdm/nodejs-planetos/blob/master/CHANGELOG.md)
 [![Build Status](https://travis-ci.org/fvdm/nodejs-planetos.svg?branch=master)](https://travis-ci.org/fvdm/nodejs-planetos)
 [![Coverage Status](https://coveralls.io/repos/github/fvdm/nodejs-planetos/badge.svg?branch=master)](https://coveralls.io/github/fvdm/nodejs-planetos?branch=master)
-[![bitHound Dependencies](https://www.bithound.io/github/fvdm/nodejs-planetos/badges/dependencies.svg)](https://www.bithound.io/github/fvdm/nodejs-planetos/develop/dependencies/npm)
-[![bitHound Code](https://www.bithound.io/github/fvdm/nodejs-planetos/badges/code.svg)](https://www.bithound.io/github/fvdm/nodejs-planetos)
 
 
 * [Node.js](https://nodejs.org)
@@ -159,12 +157,11 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-For more information, please refer to <http://unlicense.org>
+For more information, please refer to <https://unlicense.org>
 
 
 Author
 ------
 
-[Franklin van de Meent](https://frankl.in)
-
-[![Buy me a coffee](https://frankl.in/u/kofi/kofi-readme.png)](https://ko-fi.com/franklin)
+[Franklin](https://frankl.in)
+| [Buy me a coffee](https://frankl.in/donating)
